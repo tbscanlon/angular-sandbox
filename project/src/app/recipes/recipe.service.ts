@@ -9,6 +9,7 @@ export class RecipeService {
 
   private recipes: Recipe[] = [
     new Recipe(
+      '1',
       'Normal Pancakes',
       'Boring normal pancakes',
       'http://ghk.h-cdn.co/assets/16/38/980x490/landscape-1474822198-how-to-make-pancakes.jpg',
@@ -18,6 +19,7 @@ export class RecipeService {
         new Ingredient('Love', 9)
       ]),
     new Recipe(
+      '2',
       'Cool Pancakes',
       'Cool unique pancakes',
       'http://ghk.h-cdn.co/assets/16/38/980x490/landscape-1474822198-how-to-make-pancakes.jpg',
@@ -32,6 +34,10 @@ export class RecipeService {
 
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  getRecipe(id: string): Recipe {
+    return this.recipes[id];
   }
 
   addToShoppingList(ingredients: Ingredient[]) {
